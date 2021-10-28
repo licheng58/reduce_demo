@@ -1,27 +1,37 @@
 import React, { Component } from 'react'
 
-export default class TodoFooter extends Component {
+import classNames from 'classnames'
+
+class TodoFooter extends Component {
   render() {
+    console.log(this.props)
+    const { leftCount, statusList, dispatchStatus, cStatus } = this.props
     return (
       <footer className="footer">
         <span className="todo-count">
-          <strong>0</strong> item left
+          <strong>{leftCount}</strong> item left
         </span>
         <ul className="filters">
-          <li>
-            <a className="selected" href="#/">
-              All
-            </a>
-          </li>
-          <li>
-            <a href="#/active">Active</a>
-          </li>
-          <li>
-            <a href="#/completed">Completed</a>
-          </li>
+          {statusList.map((item) => {
+            return (
+              <li
+                onClick={() => dispatchStatus(item.name)}
+                key={item.id}
+                className={classNames({
+                  aaa: item.name === cStatus,
+                })}
+              >
+                <a href={item.path}>{item.name}</a>
+              </li>
+            )
+          })}
         </ul>
-        <button className="clear-completed">Clear completed</button>
+        <button className="clear-completed">
+          <div>{cStatus}</div>
+        </button>
       </footer>
     )
   }
 }
+
+export default TodoFooter

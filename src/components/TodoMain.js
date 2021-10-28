@@ -1,6 +1,4 @@
-import React, { Component, useRef } from 'react'
-import { connect } from 'react-redux'
-import { delTodo, checkItem, keyUp2 } from '../redux/action'
+import React, { Component } from 'react'
 import classNames from 'classnames'
 
 class TodoMain extends Component {
@@ -9,8 +7,6 @@ class TodoMain extends Component {
     this.state = {
       editVal: '',
     }
-
-    // this.toggleRef = React.createRef()
   }
 
   render() {
@@ -25,12 +21,7 @@ class TodoMain extends Component {
 
   renderItems() {
     const { list, dispatchDelTodo, dispatchCheck } = this.props
-    // const liRef = useRef()
-    // const liRefList = useRef([])
-    // function getRef(dom) {
-    //   liRefList.current.push(dom)
-    // }
-    // console.log(list)
+
     if (list.length === 0) {
       return (
         <div
@@ -108,28 +99,4 @@ class TodoMain extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  // console.log(state)
-  return {
-    list: state,
-  }
-}
-
-const mapActionToProps = (dispatch) => {
-  return {
-    dispatchDelTodo(id) {
-      dispatch(delTodo(id))
-    },
-
-    dispatchCheck(id) {
-      dispatch(checkItem(id))
-    },
-
-    dispatchKeyUp2(val, id) {
-      // console.log(this.state.editVal)
-      dispatch(keyUp2(val, id))
-    },
-  }
-}
-
-export default connect(mapStateToProps, mapActionToProps)(TodoMain)
+export default TodoMain

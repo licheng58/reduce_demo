@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { addTodo } from '../redux/action'
+
 class TodoHeader extends Component {
   constructor(props) {
     super(props)
@@ -41,16 +40,4 @@ class TodoHeader extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {}
-}
-
-const mapActionToProps = (dispash) => {
-  return {
-    dispathAddTodo(value) {
-      dispash(addTodo(value))
-    },
-  }
-}
-
-export default connect(mapStateToProps, mapActionToProps)(TodoHeader)
+export default TodoHeader
