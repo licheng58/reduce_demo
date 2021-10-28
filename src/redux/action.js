@@ -1,36 +1,3 @@
-export const delTodo = (id) => {
-  return {
-    type: 'DEL_TODO',
-    id,
-  }
-}
+// import { delTodo, addTodo, checkItem, keyUp2 } from './reducer/todos/action'
 
-export const addTodo = (value) => {
-  // console.log(value)
-  return {
-    type: 'ADD_TODO',
-    value,
-  }
-}
-
-export const checkItem = (id) => {
-  return {
-    type: 'CHECK',
-    id,
-  }
-}
-
-export const keyUp2 = (val, id) => {
-  return {
-    type: 'KEYUP2',
-    val,
-    id,
-  }
-}
-
-export const changeStatus = (status) => {
-  return {
-    type: 'STATUS',
-    status,
-  }
-}
+// import { changeStatus } from './reducer/status/action'
