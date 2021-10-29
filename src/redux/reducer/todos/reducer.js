@@ -2,8 +2,8 @@ const defaultState = {
   list: [
     { id: 1, name: '吃饭', done: true },
     { id: 2, name: '睡觉', done: false },
-    { id: 3, name: '打豆豆', done: true }
-  ]
+    { id: 3, name: '打豆豆', done: true },
+  ],
 }
 
 const todos = (state = defaultState.list, action) => {
@@ -14,7 +14,7 @@ const todos = (state = defaultState.list, action) => {
       let obj = {
         id: Date.now(),
         name: action.value,
-        done: false
+        done: false,
       }
 
       return (state = [...state, obj])
@@ -41,4 +41,4 @@ const todos = (state = defaultState.list, action) => {
   }
 }
 
-module.exports = todos
+export default todos

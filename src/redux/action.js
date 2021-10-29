@@ -1,3 +1,4 @@
-// import { delTodo, addTodo, checkItem, keyUp2 } from './reducer/todos/action'
+import { delTodo, addTodo, checkItem, keyUp2 } from './reducer/todos/action'
+import { changeStatus } from './reducer/current/action'
 
-// import { changeStatus } from './reducer/status/action'
+export { delTodo, addTodo, checkItem, keyUp2, changeStatus }
